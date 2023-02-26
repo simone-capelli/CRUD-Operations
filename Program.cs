@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddControllersWithViews(); //senza questa riga viene generato l'errore 'I-Service'
 builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var app = builder.Build();
